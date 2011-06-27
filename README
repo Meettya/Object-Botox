@@ -3,15 +3,36 @@ Object-Botox
 Object::Botox writed for easy object creation by default constructor and support managment properties,
 inherited by children of prototyping class.
 
-  package Parent;
-  use Botox; # yes, we now are got |new| constructor
-  
-  # default properties for ANY object of `Parent` class:
-  # prop1_ro ISA 'write-protected' && prop2 ISA 'public'
-  # and seting default value for each other
-  
+To create parent module:
+   
+	package Parent;
+
+	use Botox;
+        
   # strictly named constant PROTOTYPE !
-  use constant PROTOTYPE => { 'prop1_ro' => 1 , 'prop2' => 'abcde' };
+	use constant PROTOTYPE => {
+                'prop1_ro' => 1 ,
+                'prop2' => 'abcde'
+                };
+	
+	1; 
+
+after that we are create instanse:
+
+	package main;
+	use Data::Dumper;
+	
+	# change default value for prop1
+	my $foo = new Parent( { prop1 => 888888 } );
+	
+	print Dumper($foo);
+
+outputs get to us:
+
+	$VAR1 = bless( {
+			'Parent::prop1' => 888888,
+			'Parent::prop2' => 'abcde'
+			 }, 'Parent' );
 
 ok, in short it is like Mouse, but simple.
 
