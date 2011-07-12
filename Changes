@@ -1,5 +1,8 @@
 Revision history for Object-Botox
 
+1.13	Jul 12, 2011
+	Fix 'Use of "caller" without parentheses is ambiguous' warning
+
 1.12	Jun 27, 2011
 	RE-write documentation, buld module to CPAN.
 

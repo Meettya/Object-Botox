@@ -16,10 +16,10 @@ name: Object-Botox
 provides:
   Object::Botox:
     file: lib/Object/Botox.pm
-    version: 1.12
+    version: 1.13
 requires:
   MRO::Compat: 0
   perl: 5.006
 resources:
   license: http://dev.perl.org/licenses/
-version: 1.12
+version: 1.13
