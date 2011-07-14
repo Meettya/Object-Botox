@@ -1,3 +1,5 @@
+#!perl -T
+
 use Test::More tests => 1;
 
 note ('Just test to some subroutine, as property');

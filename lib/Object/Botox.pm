@@ -11,11 +11,11 @@ Object::Botox - simple object constructor with accessor, prototyping and default
 
 =head1 VERSION
 
-Version 1.13
+Version 1.15
 
 =cut
 
-our $VERSION = '1.13';
+our $VERSION = '1.15';
 $VERSION = eval $VERSION;
 
 =head1 SYNOPSIS
@@ -99,9 +99,9 @@ Also all of properties are inheritanced.
 	use base 'Parent';
 
 	use constant PROTOTYPE => {
-                'prop1' => 48,
-			    'prop5' => 55 , 
-			    'prop8_ro' => 'tetete'
+          'prop1' => 48,
+          'prop5' => 55,
+          'prop8_ro' => 'tetete'
 			    };
 	1;
 
@@ -116,7 +116,7 @@ give to us something like this
 
 Chainings - all setter return $self in success, so its chained
 
-$baz->prop1(88)->prop2('loreum ipsum');
+	$baz->prop1(88)->prop2('loreum ipsum');
 
 =head1 EXPORT
 
@@ -157,7 +157,9 @@ sub new{
 }
 
 
-=begin comment import(protected)
+=begin comment
+
+import(protected)
     
 Parameters: 
     @_ - calling args
@@ -176,8 +178,12 @@ sub import{
     
 }
 
-=begin comment pre_set (private)
+=begin comment
+
+pre_set (private)
+
 	initiate object with proto-properites, if we are have some object of this class in cache
+
 Parameters: 
 	$self - object
 Returns: 
@@ -200,7 +206,10 @@ $pre_set = sub{
 
 };
 
-=begin comment prototyping (private)
+=begin comment
+
+prototyping (private)
+
 	construct object by available proto-properties, declared in itself or in parents 
 Parameters: 
 	$self - object
@@ -250,7 +259,10 @@ $prototyping = sub{
 	$properties_cache{ ref $self } = \%seen_prop; # for caching
 };
 
-=begin comment create_accessor (private)
+=begin comment
+
+create_accessor (private)
+
 	create accessors for properites
 Parameters: 
 	$class	- object class
@@ -283,7 +295,10 @@ $create_accessor = sub{
 
 };
 
-=begin comment setup (private)
+=begin comment
+
+setup (private)
+
 	fill object properties by default values
 Parameters: 
 	$self - object
@@ -339,8 +354,6 @@ Meettya, C<< <meettya at cpan.org> >>
 Please report any bugs or feature requests to C<bug-object-botox at rt.cpan.org>, or through
 the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Object-Botox>.  I will be notified, and then you'll
 automatically be notified of progress on your bug as I make changes.
-
-
 
 
 =head1 SUPPORT

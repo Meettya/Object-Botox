@@ -1,3 +1,5 @@
+#!perl -T
+
 use Test::More tests => 6;
 
 my $baz = main::new_ok( 'Children' => [], 'Object' );

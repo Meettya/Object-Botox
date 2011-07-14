@@ -3,7 +3,7 @@ abstract: 'simple object constructor with accessor, prototyping and default-sett
 author:
   - 'Meettya <meettya@cpan.org>'
 build_requires:
-  Test::More: 0
+  Test::More: 0.94
 configure_requires:
   Module::Build: 0.38
 dynamic_config: 1
@@ -16,10 +16,11 @@ name: Object-Botox
 provides:
   Object::Botox:
     file: lib/Object/Botox.pm
-    version: 1.13
+    version: 1.15
 requires:
-  MRO::Compat: 0
-  perl: 5.006
+  MRO::Compat: 0.11
+  perl: 5.008
 resources:
   license: http://dev.perl.org/licenses/
-version: 1.13
+  repository: https://github.com/Meettya/Object-Botox/
+version: 1.15
